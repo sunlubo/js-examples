@@ -4,6 +4,7 @@
 
 'use strict';
 
+// 对象字面量
 var empty = {};
 var point = {x: 0.0, y: 0.0};
 var user = {
@@ -17,6 +18,7 @@ var user = {
         "day": 23
     }
 };
+// 构造函数
 function User() {
     this.username = "sun";
     this.password = "123";
@@ -43,7 +45,7 @@ function inherit(p) {
     var type = typeof p;
     if (type != "object" && type != "function") throw  TypeError;
     function Constructor() {
-        this.prototype = p
+        this.prototype = p;
     }
 
     return new Constructor();
@@ -66,7 +68,7 @@ console.log(unitCircle.x);
 
 // 枚举属性
 for (var p in user) {
-    console.log(p);
+    if (user.hasOwnProperty(p)) console.log(p);
 }
 
 // 存储器属性
